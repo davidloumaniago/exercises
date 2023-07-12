@@ -1,0 +1,138 @@
+/* Global Default */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+
+:root {
+
+    --theme-red:rgb(218, 43, 43);
+    --theme-green: rgb(92, 199, 92);
+    --theme-black: rgb(39, 36, 36); 
+    --theme-purple: rgba(128, 0, 128, 0.54);
+}
+
+html, body {
+    min-height: 100vh;
+
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100%;
+    line-height: 200%;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Grid Wrapper */
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 20% repeat(3,1fr);
+    grid-template-rows: 100px 620px auto auto; 
+
+    /* height adjusted as per my laptop full screen size*/
+}
+
+/* Grid Children */
+
+header {
+    background-color: var(--theme-black);
+    color: whitesmoke;
+    grid-area: 1/1/2/5;
+}
+
+.material-symbols-outlined {
+    font-size: 2em;
+    color: whitesmoke;
+    background-color: var(--theme-green);
+    border-radius: 50%;
+    border: 2px solid whitesmoke;
+
+    position: absolute;
+    top: 34px;
+    left: 50px;
+    opacity: .75;
+    transition: .5s;
+}
+
+.material-symbols-outlined:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 34px;
+}
+
+.image-container {
+    grid-area: 2/1/3/5;
+    position: relative;
+    height: 620px;
+    /* height adjusted as per my laptop full screen size*/
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+/* Nav Container */
+
+.nav-container {
+    background-color: var(--theme-black);
+    z-index: 1;
+    grid-area: 2/1/3/2;
+    position: relative;
+    left: -450px;
+}
+
+nav { 
+    display: flex;
+    flex-direction: column;
+    margin: 3em;
+    color: whitesmoke;
+}
+
+nav a {
+    color: whitesmoke;
+    padding: 20px 0;
+}
+
+.infoBtn {
+    position: relative;
+    margin-left: 1.5em;
+    background-color: var(--theme-purple);
+    width: 8em;
+    text-align: center;
+    color: whitesmoke;
+}
+
+/* These classes added with JS */
+
+.show-nav {
+    transform: translateX(450px);
+    transition: all 0.5s ease-in-out;
+}
+
+.hide-nav {
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.rotate {
+    transform: rotate(180deg);
+    background-color: var(--theme-red);
+}
